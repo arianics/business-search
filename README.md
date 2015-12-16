@@ -1,1 +1,1 @@
-# Businness Search
+# Business Search
