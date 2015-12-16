@@ -1,0 +1,29 @@
+{
+  "name": "business-search",
+  "homepage": "https://github.com/arianics/business-search",
+  "authors": [
+    "Arian Khosravi <arian@arin.io>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.8",
+    "angular-loader": "~1.4.8",
+    "angular-mocks": "~1.4.8",
+    "primer-css": "~2.5.0",
+    "angular": "~1.4.8",
+    "requirejs": "~2.1.22",
+    "text": "requirejs-text#~2.0.14",
+    "require-css": "~0.1.8"
+  }
+}

@@ -1,0 +1,7 @@
+**/node_modules/**
+**/bower_components/**
+
+# ignoring symlinks to ./dev files. These file are used by my IDE
+.jscsrc
+.jshint*
+!dev/.js*

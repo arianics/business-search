@@ -1,0 +1,26 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "funcscope": true,
+  "globals": {
+    "angular": true,
+    "window": true,
+    "document": true,
+    "require": true,
+    "define": true
+  },
+  "latedef": true,
+  "maxdepth": 2,
+  "maxerr": 50,
+  "strict": true,
+  "undef": true,
+  "unused": true,
+  "boss": true,
+  "node": true,
+  "undef": true,
+  "noarg": true,
+  "unused": true
+}
