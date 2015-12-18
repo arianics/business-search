@@ -46,6 +46,7 @@
 
   require([
     'angular',
+    'home/home',
     'app'
   ], function(angular) {
     angular.element(document.getElementsByTagName('html')[0]);

@@ -1,3 +1,8 @@
-<div class="right" ng-if="yelpBusinessListCtrl.total > 0">
-  {{yelpBusinessListCtrl.startIndex}}-{{yelpBusinessListCtrl.endIndex}} of {{yelpBusinessListCtrl.total}}
+<div ng-if="yelpBusinessListCtrl.total > 0">
+  <div class="right" ng-if="yelpBusinessListCtrl.total > 0">
+    {{yelpBusinessListCtrl.startIndex}}-{{yelpBusinessListCtrl.endIndex}} of {{yelpBusinessListCtrl.total}}
+  </div>
+
+
+  <pagination total="{{yelpBusinessListCtrl.numPages}}" index="{{yelpBusinessListCtrl.activePage}}"></pagination>
 </div>

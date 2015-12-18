@@ -1,8 +1,6 @@
 define([
-  'angular',
-  'angularRoute',
-  'home/home'
-], function(angular, angularRoute, home) {
+  'angular'
+], function(angular) {
   'use strict';
   // Declare app level module which depends on views, and components
   return angular.module('myApp', [
@@ -10,6 +8,8 @@ define([
     'myApp.home'
   ]).
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/'});
+    $routeProvider.otherwise({
+      redirectTo: '/'
+    });
   }]);
 });
