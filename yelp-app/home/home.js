@@ -2,7 +2,8 @@ require.config({
   paths: {
     'yelp-search-service': './services/yelp-search/yelp-search',
     'yelp-search-form': './directives/yelp-search-form/yelp-search-form',
-    'yelp-business-list': './directives/yelp-business-list/yelp-business-list'
+    'yelp-business-list': './directives/yelp-business-list/yelp-business-list',
+    'address-book': './services/address-book/address-book'
   }
 });
 define([
@@ -10,12 +11,15 @@ define([
   'angularRoute',
   'yelp-search-form',
   'yelp-search-service',
-  'yelp-business-list'
+  'yelp-business-list',
+  'ngCsv',
+  'address-book'
 ], function(angular) {
   'use strict';
 
-  angular.module('myApp.home', ['ngRoute', 'myApp.yelpSearchService',
-      'myApp.yelpSearchForm', 'myApp.yelpBusinessList'
+  angular.module('myApp.home', ['ngRoute', 'ngSanitize', 'ngCsv',
+    'myApp.yelpSearchService', 'myApp.yelpSearchForm', 'myApp.yelpBusinessList',
+    'myApp.addressBookService'
     ])
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/', {
@@ -30,10 +34,12 @@ define([
       });
     }])
     .controller('HomeController', ['$scope', 'YelpSearchService', 'yelpSearchData',
-      '$routeParams', '$location', '$route',
-      function($scope, yelpSearchService, yelpSearchData, $routeParams, $location, $route) {
+      '$routeParams', '$location', 'addressBookService',
+      function($scope, yelpSearchService, yelpSearchData, $routeParams,
+        $location, addressBookService) {
         var _this = this;
-        // _this.searchData = yelpSearchData.getData() || {};
+
+        _this.items = addressBookService.getIds();
         _this.searchOptions = yelpSearchData.getData() || {};
 
         var urlPage = $routeParams.page || 1;
@@ -49,12 +55,15 @@ define([
             console.log('ready to redirect');
             yelpSearchData.setData(data);
             $location.path('/');
-          } 
+          }
 
           _this.searchOptions = data;
-          
         };
 
+        this.exportData = function() {
+          console.log(addressBookService.getDataArray());
+          return addressBookService.getDataArray();
+        };
       }
     ]);
 });

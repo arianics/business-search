@@ -25,6 +25,7 @@
     "requirejs": "~2.1.22",
     "text": "requirejs-text#~2.0.14",
     "require-css": "~0.1.8",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "angular-sanitize": "~1.4.8"
   }
 }

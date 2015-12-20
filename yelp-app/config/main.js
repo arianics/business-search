@@ -24,9 +24,11 @@
       angular: '../bower_components/angular/angular',
       angularRoute: '../bower_components/angular-route/angular-route',
       angularMocks: '../bower_components/angular-mocks/angular-mocks',
+      angularSanitize: '../bower_components/angular-sanitize/angular-sanitize.min',
       text: '../bower_components/text/text',
       css: '../bower_components/require-css/css.min',
-      lodash: '../bower_components/lodash/lodash.min'
+      lodash: '../bower_components/lodash/lodash.min',
+      ngCsv: './directives/ng-csv/ng-csv.min'
     },
     shim: {
       'angular': {
@@ -36,7 +38,9 @@
       'angularMocks': {
         deps: ['angular'],
         'exports': 'angular.mock'
-      }
+      },
+      'angularSanitize': ['angular'],
+      'ngCsv': ['angularSanitize']
     },
     priority: [
       'angular'
