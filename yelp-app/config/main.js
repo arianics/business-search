@@ -24,7 +24,8 @@
       angular: '../bower_components/angular/angular',
       angularRoute: '../bower_components/angular-route/angular-route',
       angularMocks: '../bower_components/angular-mocks/angular-mocks',
-      text: '../bower_components/text/text'
+      text: '../bower_components/text/text',
+      lodash: '../bower_components/lodash/lodash.min'
     },
     shim: {
       'angular': {
