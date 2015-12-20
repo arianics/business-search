@@ -1,12 +1,22 @@
-<div>
-  <h2><a href="{{yBOCtrl.businessData.url}}">{{yBOCtrl.businessData.name}}</a></h2>
-  <img ng-src="{{yBOCtrl.businessData.image_url}}" >
-  <p>{{yBOCtrl.businessData.snippet_text}}</p>
-  {{yBOCtrl.businessData.display_phone}}
-  {{yBOCtrl.businessData.rating}}/{{yBOCtrl.businessData.review_count}}
-
-  {{yBOCtrl.businessData.location.address[0]}}<br>
-  {{yBOCtrl.businessData.location.city}}, {{yBOCtrl.businessData.location.state_code}} {{yBOCtrl.businessData.location.postal_code}}
-
-  <img ng-src="{{yBOCtrl.businessData.rating_img_url_large}}" >
+<div class="columns">
+  <div class="one-fifth column">
+    <img ng-src="{{yBOCtrl.businessData.image_url}}">
+  </div>
+  <div class="one-half column">
+    <h2><a href="{{yBOCtrl.businessData.url}}" target="_blank">{{yBOCtrl.businessData.name}}</a></h2>
+    <p>{{yBOCtrl.businessData.snippet_text}}</p>
+  </div>
+  <div class="one-fifth column">
+    <img ng-src="{{yBOCtrl.businessData.rating_img_url_large}}">
+    <dl>
+      <dt>Rating/Reviews:</dt>
+      <dd>{{yBOCtrl.businessData.rating}}/{{yBOCtrl.businessData.review_count}}</dd>
+      <dt>Phone:</dt>
+      <dd>{{yBOCtrl.businessData.display_phone}}</dd>
+      <dt>Address:</dt>
+      <dd>{{yBOCtrl.businessData.location.address[0]}}
+        <br> {{yBOCtrl.businessData.location.city}}, {{yBOCtrl.businessData.location.state_code}} {{yBOCtrl.businessData.location.postal_code}}</dd>
+    </dl>
+    <button class="btn btn-sm btn-outline">Add to List</button>
+  </div>
 </div>

@@ -30,7 +30,7 @@ define(['angular', 'text!yelp-search-form-html', 'lodash'],
             term: '',
             sort: '0',
             location: 'Glendale, Ca',
-            radius_filter: '40000',
+            radius_filter: '8000',
             deals_filter: ''
           };
 

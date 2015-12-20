@@ -1,0 +1,22 @@
+yelp-business-overview {
+  display: block;
+  margin-bottom: 20px;
+}
+yelp-business-overview img {
+  width: 100%;
+  height: auto;
+}
+yelp-business-overview dd,
+yelp-business-overview dt {
+  display: inline-block;
+}
+yelp-business-overview dt {
+  font-weight: 700;
+  margin-right: 5px;
+}
+yelp-business-overview dd:last-child {
+  display: block;
+}
+yelp-business-overview .btn {
+  width: 100%;
+}
