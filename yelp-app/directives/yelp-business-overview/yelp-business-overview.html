@@ -1,0 +1,12 @@
+<div>
+  <h2><a href="{{yBOCtrl.businessData.url}}">{{yBOCtrl.businessData.name}}</a></h2>
+  <img ng-src="{{yBOCtrl.businessData.image_url}}" >
+  <p>{{yBOCtrl.businessData.snippet_text}}</p>
+  {{yBOCtrl.businessData.display_phone}}
+  {{yBOCtrl.businessData.rating}}/{{yBOCtrl.businessData.review_count}}
+
+  {{yBOCtrl.businessData.location.address[0]}}<br>
+  {{yBOCtrl.businessData.location.city}}, {{yBOCtrl.businessData.location.state_code}} {{yBOCtrl.businessData.location.postal_code}}
+
+  <img ng-src="{{yBOCtrl.businessData.rating_img_url_large}}" >
+</div>

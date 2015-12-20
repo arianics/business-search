@@ -25,17 +25,36 @@ define([
       }).when('/:page', {
         templateUrl: 'home/home.html',
         controller: 'HomeController',
-        controllerAs: 'homeCtrl'
+        controllerAs: 'homeCtrl',
+        reloadOnSearch: false
       });
     }])
-    .controller('HomeController', ['YelpSearchService',
-      function(yelpSearchService) {
+    .controller('HomeController', ['$scope', 'YelpSearchService', 'yelpSearchData',
+      '$routeParams', '$location', '$route',
+      function($scope, yelpSearchService, yelpSearchData, $routeParams, $location, $route) {
         var _this = this;
-        console.log(yelpSearchService.ping());
-        this.searchOptions = {};
+        // _this.searchData = yelpSearchData.getData() || {};
+        _this.searchOptions = yelpSearchData.getData() || {};
+
+        var urlPage = $routeParams.page || 1;
+        _this.searchOptions.limit = 20;
+        _this.activePage = Math.max(parseInt(urlPage), 1);
+        _this.searchOptions.offset = (_this.activePage - 1) * _this.searchOptions.limit;
+
         this.formData = function(data) {
+          console.log('home.js::formData::', data, _this.searchOptions, _this.searchData, yelpSearchData.getData());
+          console.log('homejs', _this.searchOptions.term !== data.term);
+          if ((typeof $routeParams.page !== 'undefined' && $routeParams.page !== '1') ||
+            _this.searchOptions.term !== data.term) {
+            console.log('ready to redirect');
+            yelpSearchData.setData(data);
+            $location.path('/');
+          } 
+
           _this.searchOptions = data;
+          
         };
+
       }
     ]);
 });

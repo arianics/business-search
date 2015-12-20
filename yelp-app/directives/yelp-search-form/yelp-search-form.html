@@ -4,8 +4,8 @@
       <label for="search-term">Search Term</label>
     </dt>
     <dd>
-      <input id="search-term" class="input-large" type="text" name="term" placeholder="(e.g. 'food', 'restaurants')" ng-model="yFormCtrl.formData.term">
-      <select class="select" name="sort" ng-model="yFormCtrl.formData.sort">
+      <input id="search-term" class="input-large" type="text" name="term" placeholder="(e.g. 'food', 'restaurants')" ng-model="yFormCtrl.data.term">
+      <select class="select" name="sort" ng-model="yFormCtrl.data.sort">
         <option value="0">Best Matched</option>
         <option value="1">Distance</option>
         <option value="2">Highest Rated</option>
@@ -18,16 +18,16 @@
       <label for="location">Location</label>
     </dt>
     <dd>
-      <input id="location" class="input-large" type="text" name="location" placeholder="address, neighborhood, city, state or zip, optional country" ng-model="yFormCtrl.formData.location">
-      <select class="select" name="radius_filter" ng-model="yFormCtrl.formData.radius_filter">
-        <option value="1">1 miles</option>
-        <option value="2">2 miles</option>
-        <option value="3">3 miles</option>
-        <option value="5">5 miles</option>
-        <option value="10">10 miles</option>
-        <option value="15">15 miles</option>
-        <option value="20">20 miles</option>
-        <option value="25">25 miles</option>
+      <input id="location" class="input-large" type="text" name="location" placeholder="address, neighborhood, city, state or zip, optional country" ng-model="yFormCtrl.data.location">
+      <select class="select" name="radius_filter" ng-model="yFormCtrl.data.radius_filter">
+        <option value="1600">1 miles</option>
+        <option value="3200">2 miles</option>
+        <option value="4800">3 miles</option>
+        <option value="8000">5 miles</option>
+        <option value="16000">10 miles</option>
+        <option value="24000">15 miles</option>
+        <option value="32000">20 miles</option>
+        <option value="40000">25 miles</option>
       </select>
     </dd>
     <dd class="error">Search Term cannot be empty</dd>
@@ -38,7 +38,7 @@
     </dt>
     <dd>
       <label>
-        <input type="checkbox" checked="checked" name="deals_filter" ng-model="yFormCtrl.formData.deals_filter">
+        <input type="checkbox" checked="checked" name="deals_filter" ng-model="yFormCtrl.data.deals_filter">
         <span class="note">
           Whether to exclusively search for businesses with deals
         </span>
