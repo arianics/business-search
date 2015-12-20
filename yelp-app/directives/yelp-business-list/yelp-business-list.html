@@ -3,6 +3,7 @@
     {{yelpBusinessListCtrl.startIndex}}-{{yelpBusinessListCtrl.endIndex}} of {{yelpBusinessListCtrl.total}}
   </div>
 
+  <yelp-business-overview ng-repeat="business in yelpBusinessListCtrl.businessList" business-data="business"></yelp-business-overview>
 
   <pagination total="{{yelpBusinessListCtrl.numPages}}" index="{{yelpBusinessListCtrl.activePage}}"></pagination>
 </div>
