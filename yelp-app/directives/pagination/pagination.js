@@ -33,7 +33,6 @@ define(['angular', 'text!pagination-html'],
         };
 
         this.route = function(num) {
-          console.log(num, $location);
           $location.path('/' + num);
         };
       }
