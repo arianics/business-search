@@ -2,4 +2,6 @@
 <yelp-search-form return-data="homeCtrl.formData" form-data="homeCtrl.searchOptions"></yelp-search-form>
 <hr>
 <yelp-business-list active-page="{{homeCtrl.activePage}}" search-options="homeCtrl.searchOptions"></yelp-business-list>
-<button ng-csv="homeCtrl.exportData()" ng-show="homeCtrl.items.length" filename="business-list.csv">Export</button>
+<button class="btn btn-primary btn-block" ng-csv="homeCtrl.exportData()" ng-show="homeCtrl.items.length" filename="business-list.csv">Export
+  <span class="counter">{{homeCtrl.items.length}}</span>
+</button>

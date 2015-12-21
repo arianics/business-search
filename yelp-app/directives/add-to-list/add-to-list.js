@@ -5,7 +5,7 @@ require.config({
   }
 });
 
-define(['angular', 'text!add-to-list', 'address-book'],
+define(['angular', 'text!add-to-list-html', 'address-book'],
   function(angular, html) {
     'use strict';
 
