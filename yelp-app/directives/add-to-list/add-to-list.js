@@ -39,7 +39,6 @@ define(['angular', 'text!add-to-list-html', 'address-book'],
               addressBookService.add(_this.item);
             }
             updateAddedState();
-            console.log(addressBookService.getAll());
           };
 
           updateAddedState();

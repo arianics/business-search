@@ -37,14 +37,7 @@ define(['angular', 'text!yelp-search-form-html', 'lodash'],
           this.data = {};
           _.defaults(this.data, this.formData, formData);
 
-          // this.term = this.formData.term;
-          // this.sort = this.formData.sort;
-          // this.location = this.formData.location;
-          // this.radius_filter = this.formData.radius_filter;
-          // this.deals_filter = this.formData.deals_filter;
-
           this.submit = function() {
-            console.log('submit');
             if (_this.formData.term === '') {
               _this.termError = true;
             } else {

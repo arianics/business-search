@@ -48,11 +48,8 @@ define([
         _this.searchOptions.offset = (_this.activePage - 1) * _this.searchOptions.limit;
 
         this.formData = function(data) {
-          console.log('home.js::formData::', data, _this.searchOptions, _this.searchData, yelpSearchData.getData());
-          console.log('homejs', _this.searchOptions.term !== data.term);
           if ((typeof $routeParams.page !== 'undefined' && $routeParams.page !== '1') ||
             _this.searchOptions.term !== data.term) {
-            console.log('ready to redirect');
             yelpSearchData.setData(data);
             $location.path('/');
           }
@@ -61,7 +58,6 @@ define([
         };
 
         this.exportData = function() {
-          console.log(addressBookService.getDataArray());
           return addressBookService.getDataArray();
         };
       }
