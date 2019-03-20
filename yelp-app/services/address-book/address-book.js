@@ -35,20 +35,26 @@ define(['angular'], function(angular) {
         if (name.length) {
           address += name + '\n';
         }
-        if (typeof item.location.address[0] !== 'undefined') {
-          address += item.location.address[0] + '\n';
+        if (typeof item.location.address1 === 'string' && item.location.address1.length > 0) {
+          address += item.location.address1 + '\n';
+        }
+        if (typeof item.location.address2 === 'string' && item.location.address2.length > 0) {
+          address += item.location.address2 + '\n';
+        }
+        if (typeof item.location.address3 === 'string' && item.location.address3.length > 0) {
+          address += item.location.address3 + '\n';
         }
 
-        if (typeof item.location.city !== 'undefined') {
+        if (typeof item.location.city === 'string') {
           address += item.location.city + ',';
         }
 
-        if (typeof item.location.state_code !== 'undefined') {
-          address += ' ' + item.location.state_code;
+        if (typeof item.location.state !== 'string') {
+          address += ' ' + item.location.state;
         }
 
-        if (typeof item.location.postal_code !== 'undefined') {
-          address += ' ' + item.location.postal_code;
+        if (typeof item.location.zip_code !== 'string') {
+          address += ' ' + item.location.zip_code;
         }
       }
       return address;

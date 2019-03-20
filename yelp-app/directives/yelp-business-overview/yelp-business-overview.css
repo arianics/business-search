@@ -3,12 +3,8 @@ yelp-business-overview {
   margin-bottom: 20px;
 }
 yelp-business-overview img {
-  width: 100%;
+  max-width: 102px;
   height: auto;
-}
-yelp-business-overview dd,
-yelp-business-overview dt {
-  display: inline-block;
 }
 yelp-business-overview dt {
   font-weight: 700;

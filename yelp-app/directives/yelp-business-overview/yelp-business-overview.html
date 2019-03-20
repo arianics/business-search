@@ -4,18 +4,19 @@
   </div>
   <div class="one-half column">
     <h2><a href="{{yBOCtrl.businessData.url}}" target="_blank">{{yBOCtrl.businessData.name}}</a></h2>
-    <p>{{yBOCtrl.businessData.snippet_text}}</p>
-  </div>
-  <div class="one-fifth column">
-    <img ng-src="{{yBOCtrl.businessData.rating_img_url_large}}">
+    <img ng-src="directives/yelp-business-overview/images/regular_{{yBOCtrl.businessData.rating}}.png" width="102"
+      height="18">
     <dl>
       <dt>Rating/Reviews:</dt>
       <dd>{{yBOCtrl.businessData.rating}}/{{yBOCtrl.businessData.review_count}}</dd>
       <dt>Phone:</dt>
       <dd>{{yBOCtrl.businessData.display_phone}}</dd>
       <dt>Address:</dt>
-      <dd>{{yBOCtrl.businessData.location.address[0]}}
-        <br> {{yBOCtrl.businessData.location.city}}, {{yBOCtrl.businessData.location.state_code}} {{yBOCtrl.businessData.location.postal_code}}</dd>
+      <dd>{{yBOCtrl.businessData.location.address1}}
+        <span ng-if="yBOCtrl.businessData.location.address2.length > 0"></span><br>{{yBOCtrl.businessData.location.address2}}</span>
+        <span ng-if="yBOCtrl.businessData.location.address3.length > 0"></span><br>{{yBOCtrl.businessData.location.address3}}</span>
+        <br> {{yBOCtrl.businessData.location.city}}, {{yBOCtrl.businessData.location.state}}
+        {{yBOCtrl.businessData.location.zip_code}}</dd>
     </dl>
     <add-to-list item="yBOCtrl.businessData"></add-to-list>
   </div>

@@ -1,5 +1,5 @@
 <style>
-pagination {
+  pagination {
   left: 50%;
   margin: 50px 0;
   position: absolute;
@@ -10,5 +10,8 @@ pagination {
 }
 </style>
 <div class="btn-group">
-  <button class="btn btn-sm" type="button" ng-repeat="i in paginationCtrl.getTotalPagesArray(paginationCtrl.total) track by $index" ng-click="paginationCtrl.route($index+1)" ng-class="{disabled: ($index+1) == paginationCtrl.index}">{{$index + 1}}</button>
+  <button class="btn btn-sm" type="button" ng-repeat="i in paginationCtrl.getTotalPagesArray(paginationCtrl.total) track by $index"
+    ng-click="paginationCtrl.route($index+1)" ng-disabled="($index+1) == paginationCtrl.index || $index + 1 > 50"
+    ng-class="{disabled: ($index+1) == paginationCtrl.index || $index + 1 > 50}">{{$index
+    + 1}}</button>
 </div>

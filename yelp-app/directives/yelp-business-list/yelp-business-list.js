@@ -56,11 +56,11 @@ define(['angular', 'text!yelp-business-list-html', 'yelp-search-service',
         var yelpPromise = yelpSearchService.search(data);
 
         yelpPromise.then(function(response) {
-          _this.total = response.data.total;
+          _this.total = response.data.jsonBody.total;
           _this.startIndex = response.config.data.offset + 1;
           _this.endIndex = _this.startIndex + response.config.data.limit - 1;
           _this.numPages = Math.ceil(_this.total / response.config.data.limit);
-          _this.businessList = response.data.businesses;
+          _this.businessList = response.data.jsonBody.businesses;
         });
       };
     }]);
