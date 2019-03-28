@@ -2,6 +2,7 @@
   <div class="right" ng-if="yelpBusinessListCtrl.total > 0">
     {{yelpBusinessListCtrl.startIndex}}-{{yelpBusinessListCtrl.endIndex}} of {{yelpBusinessListCtrl.total}}
   </div>
+  <button ng-click="yelpBusinessListCtrl.selectAll()">Select All</button>
 
   <yelp-business-overview ng-repeat="business in yelpBusinessListCtrl.businessList" business-data="business"></yelp-business-overview>
 

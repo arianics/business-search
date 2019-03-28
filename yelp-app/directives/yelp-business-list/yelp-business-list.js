@@ -31,8 +31,8 @@ define(['angular', 'text!yelp-business-list-html', 'yelp-search-service',
     };
   }])
   .controller('YelpBusinessListController', ['$scope',
-    'YelpSearchService', '$routeParams', '$timeout',
-    function($scope, yelpSearchService, $routeParams, $timeout) {
+    'YelpSearchService', '$routeParams', '$timeout', 'addressBookService',
+    function($scope, yelpSearchService, $routeParams, $timeout, addressBookService) {
       var _this = this;
       var apiCallInterval = null;
       this.startIndex = 0;
@@ -52,6 +52,14 @@ define(['angular', 'text!yelp-business-list-html', 'yelp-search-service',
         }
       }, true);
 
+      this.selectAll = function() {
+        for (let i = 0; i < _this.businessList.length; i++) {
+          var businesData = _this.businessList[i];
+          if (!addressBookService.contains(businesData.id)) {
+            addressBookService.add(businesData.id);
+          }
+        }
+      };
       var fetchData = function(data) {
         var yelpPromise = yelpSearchService.search(data);
 

@@ -49,11 +49,11 @@ define(['angular'], function(angular) {
           address += item.location.city + ',';
         }
 
-        if (typeof item.location.state !== 'string') {
+        if (typeof item.location.state === 'string') {
           address += ' ' + item.location.state;
         }
 
-        if (typeof item.location.zip_code !== 'string') {
+        if (typeof item.location.zip_code === 'string') {
           address += ' ' + item.location.zip_code;
         }
       }
